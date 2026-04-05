@@ -97,8 +97,10 @@ const App = () => {
             <ul>
               {moviesList.map((movie) => (
                 <MovieCard
-                  key={movie.id} movie={movie}
-                  onSelect={() => setSelectedMovie(movie)} />
+                  key={movie.id}
+                  movie={movie}
+                  onSelect={() => setSelectedMovie(movie)}
+                />
               ))}
             </ul>
           )}
@@ -111,20 +113,25 @@ const App = () => {
           >
             <div
               className="w-full max-w-2xl rounded-2xl bg-dark-100 p-5 sm:p-6"
-              onClick={(event) => event.stopPropagation()}>
-
+              onClick={(event) => event.stopPropagation()}
+            >
               <div className="mb-4 flex items-start justify-between gap-4">
                 <div>
                   <h2>{selectedMovie.title}</h2>
                   <p className="mt-1 text-light-200">
                     {selectedMovie.release_date
-                      ? selectedMovie.release_date.slice(0, 4): "N/A"}{"  •  "}
-                      {selectedMovie.original_language? selectedMovie.original_language.toUpperCase(): "N/A"}
+                      ? selectedMovie.release_date.slice(0, 4)
+                      : "N/A"}
+                    {"  •  "}
+                    {selectedMovie.original_language
+                      ? selectedMovie.original_language.toUpperCase()
+                      : "N/A"}
                   </p>
                 </div>
 
                 <button
-                  type="button" className="rounded-md bg-light-100/10 px-3 py-1 text-sm text-white"
+                  type="button"
+                  className="rounded-md bg-light-100/10 px-3 py-1 text-sm text-white"
                   onClick={() => setSelectedMovie(null)}
                 >
                   Close
@@ -135,7 +142,8 @@ const App = () => {
                 <img
                   src={
                     selectedMovie.poster_path
-                      ? `https://image.tmdb.org/t/p/w500${selectedMovie.poster_path}`: "./no-movie.png"
+                      ? `https://image.tmdb.org/t/p/w500${selectedMovie.poster_path}`
+                      : "./no-movie.png"
                   }
                   alt={selectedMovie.title}
                   className="h-auto w-full rounded-lg"
