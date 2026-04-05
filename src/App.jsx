@@ -135,7 +135,7 @@ const App = () => {
                 <img
                   src={
                     selectedMovie.poster_path
-                      ? `https://image.tmdb.org/t/p/w500${selectedMovie.poster_path}`: "/no-movie.png"
+                      ? `https://image.tmdb.org/t/p/w500${selectedMovie.poster_path}`: "./no-movie.png"
                   }
                   alt={selectedMovie.title}
                   className="h-auto w-full rounded-lg"
